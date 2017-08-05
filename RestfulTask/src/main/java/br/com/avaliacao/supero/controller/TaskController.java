@@ -29,8 +29,8 @@ public class TaskController {
 		return taskDAO.findById(id);
 	}
 
-	public void remove(Long TaskId) {
-		HibernateUtils.delete(new Task(TaskId));
+	public void remove(Task taskRemove) {
+		HibernateUtils.delete(taskRemove);
 	}
 
 	public List<Task> getTasks(FilterTask filter) {

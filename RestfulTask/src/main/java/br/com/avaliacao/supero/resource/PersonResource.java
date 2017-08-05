@@ -42,7 +42,6 @@ public class PersonResource {
 		
 		FilterPerson filter = new FilterPerson();
 		
-		Date date = null;
 		String dateFormat = "";
 		if(!filterDate.equals("null")){
 			 dateFormat = filterDate.replaceAll("_", "/");

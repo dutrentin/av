@@ -42,7 +42,7 @@ public class TaskDAOImpl implements TaskDAO{
 		try{
 			em = HibernateUtils.getConnection();
 			hql.append("from Task as t ");
-			hql.append("where t.status = true ");
+			hql.append("where 1 = 1 ");
 			
 			mountFilters(filter, hql);
 			
@@ -61,9 +61,20 @@ public class TaskDAOImpl implements TaskDAO{
 	}
 
 	private void mountFilters(FilterTask filter, StringBuilder hql) {
-		if(ValidateUtils.validateString(filter.getFilterTitle())){
-			hql.append(" and lower(p.title) like lower('%" + filter.getFilterTitle() + "%')");
+		if(filter != null && filter.getFilterTitle() != null){
+			if(ValidateUtils.validateString(filter.getFilterTitle())){
+				hql.append(" and lower(t.title) like lower('%" + filter.getFilterTitle() + "%')");
+			}
 		}
+		
+		if(ValidateUtils.validateString(filter.getDateConclusionString())){
+			hql.append(" and DATE(t.dateConclusion) = '" + filter.getDateConclusionString()+ "'");
+		}
+		
+		if(ValidateUtils.validateString(filter.getCreationDateString())){
+			hql.append(" and DATE(t.creationDate) = '" + filter.getCreationDateString()+ "'");
+		}
+		hql.append(" and t.status = " + filter.isFilterStatus() + "");
 	}
 	
 	public int count(FilterTask filter) {
@@ -71,7 +82,7 @@ public class TaskDAOImpl implements TaskDAO{
 		int count = 0;
 		try{
 			hql.append("select t from Task as t ");
-			hql.append("where t.status = true ");
+			hql.append("where 1 = 1 ");
 			mountFilters(filter, hql);
 			
 			Query query = em.createQuery(hql.toString());

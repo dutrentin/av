@@ -42,6 +42,8 @@ public class HibernateUtils {
 		try{
 			em = getConnection();
 			em.getTransaction().begin();
+			obj.getClass();
+			obj = em.merge(obj);
 			em.remove(obj);
 			em.getTransaction().commit();
 			em.close();

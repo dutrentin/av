@@ -12,20 +12,19 @@
   
     <persistence-unit name="avaliacaoSoftplan" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-         <class>br.com.avaliacao.supero.model.Task</class>
-         <class>br.com.avaliacao.supero.model.Person</class>
+       <class>br.com.avaliacao.supero.model.Task</class>
         
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/avaliacaosupero"/>
-            <property name="javax.persistence.jdbc.password" value="root"/>
             <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="root"/>
             
-<!--             <property name="hibernate.hbm2ddl.auto" value="update"/> -->
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
             
             <property name="javax.persistence.schema-generation.database.action" value="create"/>
             
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-<!--             <property name="hibernate.show_sql" value="true" /> -->
+            <property name="hibernate.show_sql" value="true" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
             
             <property name="hibernate.c3p0.min_size" value="5" />

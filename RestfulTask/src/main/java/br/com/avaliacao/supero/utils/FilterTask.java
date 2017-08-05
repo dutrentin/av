@@ -1,6 +1,7 @@
 package br.com.avaliacao.supero.utils;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class FilterTask implements Serializable{
 	
@@ -8,10 +9,17 @@ public class FilterTask implements Serializable{
 	
 	private String filterTitle;
 	private boolean filterStatus;
+	private Date creationDate;
+	private Date dateConclusion;
+	private String creationDateString;
+	private String dateConclusionString;
 	private int maxResults;
 	private int currentPage;
 	private String order;
 	
+	public FilterTask(){
+		filterStatus = true;
+	}
 	
 	public String getFilterTitle() {
 		return filterTitle;
@@ -43,7 +51,28 @@ public class FilterTask implements Serializable{
 	public void setOrder(String order) {
 		this.order = order;
 	}
-	
-	
-     
+	public Date getCreationDate() {
+		return creationDate;
+	}
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
+	}
+	public Date getDateConclusion() {
+		return dateConclusion;
+	}
+	public void setDateConclusion(Date dateConclusion) {
+		this.dateConclusion = dateConclusion;
+	}
+	public String getCreationDateString() {
+		return creationDateString;
+	}
+	public void setCreationDateString(String creationDateString) {
+		this.creationDateString = creationDateString;
+	}
+	public String getDateConclusionString() {
+		return dateConclusionString;
+	}
+	public void setDateConclusionString(String dateConclusionString) {
+		this.dateConclusionString = dateConclusionString;
+	}
 }
