@@ -37,7 +37,7 @@ public class TaskMB extends BaseBeans{
 	private FilterTask filter;
 	private String statusSelectedString;
 	private boolean isEdit;
-	private SimpleDateFormat formatter = new SimpleDateFormat("dd_MM_yyyy");
+	private SimpleDateFormat formatter = new SimpleDateFormat("yyyy_MM_dd");
 	
 	private LazyDataModel<Task> model;
 	Task task;
@@ -127,6 +127,11 @@ public class TaskMB extends BaseBeans{
 				}
 			}
 		};
+	}
+	
+	public void cleanFilters(){
+		filter = new FilterTask();
+		updateDataTable();
 	}
 	
 	public String saveOrEdit(){
@@ -223,7 +228,6 @@ public class TaskMB extends BaseBeans{
 					entity = Entity.entity(task, MediaType.APPLICATION_XML);
 					response = target.path("/tasks").request().put(entity);
 				}
-				System.out.println();
 			}
 		}catch(Exception ex){
 			ex.printStackTrace();

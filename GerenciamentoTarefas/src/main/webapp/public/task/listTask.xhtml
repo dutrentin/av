@@ -32,6 +32,16 @@
 							            <f:selectItem itemLabel="Inativos" itemValue="false" />
 							        </p:selectOneMenu>
 						        </p:column>
+						        <p:column >
+						    	    <p:outputLabel>Dt. Criação</p:outputLabel><br></br>
+						        	 <p:calendar id="dateCreate" value="#{taskMB.filter.creationDate}" yearRange="c-100:c+0" 	locale="pt_BR" 
+						        	 	showOtherMonths="true"  navigator="true" pattern="dd/MM/yyyy"  styleClass="form-control input-lg input-custom-cal" showOn="button" />
+						        </p:column>
+						        <p:column >
+						    	    <p:outputLabel>Dt. Conclusão</p:outputLabel><br></br>
+						        	 <p:calendar id="dateConclusion" value="#{taskMB.filter.dateConclusion}" yearRange="c-100:c+0" 	locale="pt_BR" 
+						        	 	showOtherMonths="true"  navigator="true" pattern="dd/MM/yyyy"  styleClass="form-control input-lg input-custom-cal" showOn="button" />
+						        </p:column>
 						    </p:row>
 				    	</p:panelGrid>
 					</p:fieldset>
@@ -40,6 +50,8 @@
 				    <div align="left" style="margin-left: -13px">
 						  <h:commandButton  actionListener="#{taskMB.updateDataTable}" ajax="false" styleClass="btn-primary"
 								 title="Filtrar" id="btnFilter" value="Filtrar" />
+						   <h:commandButton  actionListener="#{taskMB.cleanFilters}" ajax="false" styleClass="btn-primary"
+								 title="Limpar" id="btnFilterClean" value="Limpar" />
 					</div>
 					
 					<br></br>
