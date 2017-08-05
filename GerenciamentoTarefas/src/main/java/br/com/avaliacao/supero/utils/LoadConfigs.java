@@ -1,4 +1,4 @@
-package br.com.avaliacao.softplan.utils;
+package br.com.avaliacao.supero.utils;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -13,7 +13,11 @@ public class LoadConfigs {
 	private static String urlApiRest;
 	private static WebTarget target;
 	
-	
+	/**
+	 * método usado para leitura de arquivo config.properties com parametro hotname_api_restful
+	 * o qual informa o host do restful que será consumido e será carregado no client para submissão
+	 * @return objeto WebTarget classe de requisição ao restful
+	 */	
 	public static WebTarget loadConfigs(){
 		ClientConfig config = new ClientConfig();
 		config.register(new LoggingFilter());

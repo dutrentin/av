@@ -1,8 +1,11 @@
-package br.com.avaliacao.softplan.utils;
+package br.com.avaliacao.supero.utils;
 
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * Classe criada para transmissão de valores de filtros entre Aplicação e Restful
+ */	
 public class FilterTask implements Serializable{
 	
 	private static final long serialVersionUID = 7833360363874843256L;

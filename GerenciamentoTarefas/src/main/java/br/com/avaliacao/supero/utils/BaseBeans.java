@@ -1,4 +1,4 @@
-package br.com.avaliacao.softplan.utils;
+package br.com.avaliacao.supero.utils;
 
 import java.io.Serializable;
 

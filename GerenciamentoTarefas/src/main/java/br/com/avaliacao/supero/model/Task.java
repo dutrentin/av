@@ -1,4 +1,4 @@
-package br.com.avaliacao.softplan.model;
+package br.com.avaliacao.supero.model;
 
 import java.io.Serializable;
 import java.util.Date;

@@ -57,7 +57,7 @@
   color: #ffffff !important;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)!important;
   background-color: #006dcc !important;
-  *background-color: #0044cc !important;
+  background-color: #0044cc !important;
   background-image: -moz-linear-gradient(top, #0088cc, #0044cc) !important;
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc)) !important;
   background-image: -webkit-linear-gradient(top, #0088cc, #0044cc) !important;
@@ -72,6 +72,13 @@
      -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05) !important;
           box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05) !important;
 /*    border-radius: 10px !important; */
+}
+
+.btn-clean{
+	background-color: white !important;
+    background: white !important;
+    color: black !important;
+ 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)!important;
 }
 
 .input-custom-cal{

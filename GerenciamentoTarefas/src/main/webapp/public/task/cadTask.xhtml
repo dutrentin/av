@@ -11,11 +11,11 @@
 		<f:view>
 			<f:event listener="#{taskMB.onLoad}" type="preRenderView" />
 		</f:view>
-		
 	<p:messages id="messages" showDetail="false" autoUpdate="true" closable="true" />
 <!-- 	<p:growl showDetail="true"/> -->
 		<div align="center">
-				<h:form styleClass="size-form-cad" enctype="multipart/form-data">
+				<h:form styleClass="size-form-cad" enctype="multipart/form-data" id="form">
+				<p:focus for="txtNome" ></p:focus>
 				<h:inputHidden value="#{taskMB.task.id}" />
 				<br></br>
 				<div align="left">
@@ -27,7 +27,7 @@
 						    <p:row>
 						        <p:column>
 						        	<p:outputLabel>Nome*</p:outputLabel><br></br>
-						        	<p:inputText value="#{taskMB.task.title}" id="txtNome" maxlength="150" required="true" requiredMessage="Informe o nome"
+						        	<p:inputText value="#{taskMB.task.title}"  id="txtNome" maxlength="150" required="true" requiredMessage="Informe o nome"
 									      	placeholder="Informe o nome" styleClass="form-control input-lg input-custom" />
 								</p:column>
 							  </p:row>
