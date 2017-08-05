@@ -131,6 +131,7 @@ public class TaskMB extends BaseBeans{
 	
 	public void cleanFilters(){
 		filter = new FilterTask();
+		statusSelectedString = "true";
 		updateDataTable();
 	}
 	

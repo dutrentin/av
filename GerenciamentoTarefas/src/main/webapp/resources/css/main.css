@@ -23,7 +23,8 @@
 .input-custom-area{
 	width:98.5% !important;
 	font-size: 15px !important;
-	opacity: 0.5;"  
+	opacity: 0.5;
+	height: 80px !important;
 }
 
 .btn-filter{
@@ -75,9 +76,20 @@
 
 .input-custom-cal{
 	width:100% !important;
-	height: 30px;
+	height: 21px !important;
+	margin-top: 10px !important;
 	font-size: 15px !important;
 	opacity: 0.5;"  
+}
+
+.ui-inputfield ui-widget ui-state-default ui-corner-all hasDatepicker{
+	height: 30px !important;
+	font-size:20px !important;
+}
+
+.ui-inputfield{
+	height: 20px;
+	font-size:15px !important;
 }
 
 .ui-fieldset, .ui-fieldset .ui-fieldset-legend{
