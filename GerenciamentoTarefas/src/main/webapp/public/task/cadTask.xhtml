@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui" template="../main.xhtml">
+	
+	<ui:define name="content">
+		<f:view>
+			<f:event listener="#{taskMB.onLoad}" type="preRenderView" />
+		</f:view>
+		
+	<p:messages id="messages" showDetail="false" autoUpdate="true" closable="true" />
+<!-- 	<p:growl showDetail="true"/> -->
+		<div align="center">
+				<h:form styleClass="size-form-cad" enctype="multipart/form-data">
+				<h:inputHidden value="#{taskMB.task.id}" />
+				<br></br>
+				<div align="left">
+					<h:outputLabel for="name" style="font: bold;font-weight: bolder" value="Cadastro de Pessoa" />
+				</div>
+				<br></br>
+					<p:fieldset legend="Tarefa">
+					    <p:panelGrid styleClass="size-form" style="width: 100% !important">
+						    <p:row>
+						        <p:column>
+						        	<p:outputLabel>Nome*</p:outputLabel><br></br>
+						        	<p:inputText value="#{taskMB.task.title}" id="txtNome" maxlength="150" required="true" requiredMessage="Informe o nome"
+									      	placeholder="Informe o nome" styleClass="form-control input-lg input-custom" />
+								</p:column>
+							  </p:row>
+							   <p:row>
+								 <p:column>
+						        	<p:outputLabel>Descrição</p:outputLabel><br></br>
+						        	<p:inputTextarea value="#{taskMB.task.description}" id="txtDesc" maxlength="250" autoResize="false" rows="5"
+									      	placeholder="Informe a descrição da tarefa" styleClass="form-control input-lg input-custom-area"
+									      	onkeyup="document.getElementById('cont').value = this.value.length" />
+									      	<input name="cont" id="cont" type="text" style="width:30px" readonly="true"/>
+									        <h:outputText value="Limite 250 caracteres" style="margin-left: 10px"/>
+								</p:column>
+						    </p:row>
+				    	</p:panelGrid>
+				    	<br></br>
+				    	<br></br>
+					</p:fieldset>
+					<div align="left">
+	                <br></br>
+						  <h:commandButton  action="#{taskMB.saveOrEdit}"  ajax="false" styleClass="btn-primary"
+								 title="Salvar" id="botaoSalvar" value="Salvar" />
+					</div>
+				</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
